@@ -4,7 +4,7 @@ const calc = require('../lib');
 try {
   const { func, n } = argsParser(process);
   const res = calc({func, n});
-  console.log(res);
+  console.log('Result: ' + res);
 } catch (e) {
-  console.log('Error calculating factorial: ' + e.message);
+  console.log('Error: ' + e.message);
 }

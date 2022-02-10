@@ -1,7 +1,8 @@
 const minimist = require('minimist');
 const factorial = require('./jobs/factorial');
+const fibonacci = require('../lib/jobs/fibonacci');
 
-const funcs = [...Object.keys(factorial)];
+const funcs = [...Object.keys(factorial), ...Object.keys(fibonacci)];
 
 module.exports = ({argv}) => {
   const args = argv.slice(2);
