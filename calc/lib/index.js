@@ -1,9 +1,21 @@
-const factortial = require('../lib/jobs/factorial');
-const fibonacci = require('../lib/jobs/fibonacci');
+const { factLoop, factRecursion } = require('./jobs/factorial');
+const { fibLoop, fibRecursion } = require('../lib/jobs/fibonacci');
+const { fibRecursionMemoized } = require('../lib/jobs/fibonacci-memoized');
 
-const funcs = { ...factortial, ...fibonacci };
+const funcs = {
+  'fact-loop': factLoop,
+  'fact-recur': factRecursion,
+  'fib-loop': fibLoop,
+  'fib-recur': fibRecursion,
+  'fib-recur-memo': fibRecursionMemoized
+}
 
-module.exports = ({func, n}) => {
+const calc  = ({func, n}) => {
   console.debug(`Going to perform ${func} with ${n}`);
   return funcs[func](n);
+};
+
+module.exports = {
+  calc,
+  funcNames: Object.keys(funcs)
 }

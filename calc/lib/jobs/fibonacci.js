@@ -12,17 +12,14 @@ const fibLoop = (n) => {
   return last;
 };
 
-const fibRecursionWrapper = (n) => fibRecursion(n)[1];
+const fibRecursion = (n) => fibDoRecursion(n)[1];
 
-const fibRecursion = (n) => {
-  if (n === 0) {
-    return [0, 1];
-  }
-  const [prev, last] = fibRecursion(n - 1);
+const fibDoRecursion = (n) => {
+  const [prev, last] = (n === 0) ? [0, 1] : fibDoRecursion(n - 1);
   return [last, prev + last]
 };
 
 module.exports = {
-  'fib-loop': fibLoop,
-  'fib-recur': fibRecursionWrapper
+  fibLoop,
+  fibRecursion
 }

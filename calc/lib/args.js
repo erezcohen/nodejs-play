@@ -1,8 +1,7 @@
 const minimist = require('minimist');
-const factorial = require('./jobs/factorial');
-const fibonacci = require('../lib/jobs/fibonacci');
 
-const funcs = [...Object.keys(factorial), ...Object.keys(fibonacci)];
+const { funcNames } = require('./index');
+
 
 module.exports = ({argv}) => {
   const args = argv.slice(2);
@@ -15,8 +14,8 @@ module.exports = ({argv}) => {
 
   const func = switches.func;
 
-  if (!funcs.includes(func)) {
-    throw new Error('"func" value must be one of ' + funcs.join(', '));
+  if (!funcNames.includes(func)) {
+    throw new Error('"func" value must be one of ' + funcNames.join(', '));
   }
 
   return {

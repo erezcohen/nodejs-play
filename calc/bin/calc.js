@@ -1,10 +1,11 @@
 const argsParser = require('../lib/args');
-const calc = require('../lib');
+const { calc } = require('../lib');
 
 try {
   const { func, n } = argsParser(process);
   const res = calc({func, n});
   console.log('Result: ' + res);
 } catch (e) {
-  console.log('Error: ' + e.message);
+  console.error('Error: ' + e.message);
+  process.exit(1);
 }
