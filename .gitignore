@@ -1,6 +1,11 @@
+# Cache
+calc/lib/jobs/fibonacci-memoized-cache.json
+
 # IntelliJ
 .idea/*
 *.iml
+
+#-----------------------------------------------------------
 
 # Logs
 logs
