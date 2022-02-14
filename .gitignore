@@ -1,5 +1,5 @@
 # Cache
-calc/lib/jobs/fibonacci-memoized-cache.json
+calc/lib/jobs/fibonacci-cache.json
 
 # IntelliJ
 .idea/*

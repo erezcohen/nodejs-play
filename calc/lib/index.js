@@ -1,13 +1,15 @@
-const { factLoop, factRecursion } = require('./jobs/factorial');
-const { fibLoop, fibRecursion } = require('../lib/jobs/fibonacci');
-const { fibRecursionMemoized } = require('../lib/jobs/fibonacci-memoized');
+const factorial = require('./jobs/factorial');
+const fibonacci = require('../lib/jobs/fibonacci');
+const fibRecursionCached = require('./jobs/fibonacci-cached');
 
 const funcs = {
-  'fact-loop': factLoop,
-  'fact-recur': factRecursion,
-  'fib-loop': fibLoop,
-  'fib-recur': fibRecursion,
-  'fib-recur-memo': fibRecursionMemoized
+  'fact-loop': factorial.factLoop,
+  'fact-recur': factorial.factRecursion,
+  'fib-loop': fibonacci.fibLoop,
+  'fib-recur': fibonacci.fibRecursion,
+  'fib-recur-linear': fibonacci.fibRecursionLinear,
+  'fib-recur-memo': fibonacci.fibRecursionMemoized,
+  'fib-recur-cache': fibRecursionCached
 }
 
 const calc  = ({func, n}) => {

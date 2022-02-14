@@ -7,6 +7,7 @@ const factRecursion = (n) => n === 1
   ? 1
   : n * factRecursion(n - 1);
 
+
 module.exports = {
   factLoop,
   factRecursion

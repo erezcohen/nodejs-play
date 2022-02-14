@@ -5,10 +5,10 @@ const writeFile = promisify(fs.writeFile);
 
 const { fibRecursion } = require('./fibonacci');
 
-const CACHE_FILE_PATH = './lib/jobs/fibonacci-memoized-cache.json';
+const CACHE_FILE_PATH = './lib/jobs/fibonacci-cache.json';
 
 
-const fibRecursionMemoized = async (n) => {
+const fibRecursionCached = async (n) => {
   const cacheStr = fs.existsSync(CACHE_FILE_PATH)
     ? await readFile(CACHE_FILE_PATH, 'utf-8')
     : '{}';
@@ -33,6 +33,4 @@ const calcNewValue = (cache, n) =>
     : fibRecursion(n);
 
 
-module.exports = {
-  fibRecursionMemoized
-}
+module.exports = fibRecursionCached;
