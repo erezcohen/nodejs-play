@@ -4,6 +4,7 @@ const fibRecursionCached = require('./jobs/fibonacci-cached');
 
 const funcs = {
   'fact-loop': factorial.factLoop,
+  'fact-loop-2': factorial.factLoop2,
   'fact-recur': factorial.factRecursion,
   'fib-loop': fibonacci.fibLoop,
   'fib-recur': fibonacci.fibRecursion,
